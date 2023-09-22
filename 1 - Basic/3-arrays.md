@@ -123,6 +123,10 @@ console.log(array_Clone([1, 2, [4, 0]]));
 3. Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array. 
 Test Data :
 ```javascript
+const first = (array, n = 1) => {
+  return array.slice(0, n);
+}
+
 console.log(first([7, 9, 0, -2])); // 7
 console.log(first([],3)); // []
 console.log(first([7, 9, 0, -2],3)); // [7, 9, 0]
@@ -133,12 +137,19 @@ console.log(first([7, 9, 0, -2],-3)); // []
 
 4. Write a simple JavaScript program to join all elements of the following array into a string.
 ```javascript
-var myColor = ["Red", "Green", "White", "Black"];
+const joinElements = (array) => {
+  return array.join('')
+}
+const myColor = ["Red", "Green", "White", "Black"]
+console.log({aux: joinElements(myColor)})
 ```
 
 5. Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.
 Test Data :
 ```javascript
+const last = (array, n = 1) => {
+  return array.slice(-n)
+}
 console.log(last([7, 9, 0, -2])); 
 console.log(last([7, 9, 0, -2],3)); 
 console.log(last([7, 9, 0, -2],6));
@@ -147,8 +158,23 @@ console.log(last([7, 9, 0, -2],6));
 6. Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers.
   For example if you accept 025468 the output should be 0-254-6-8.
 ```javascript
-Sample Input: 025468 
-Expected Output: 0-254-6-8
+// Sample Input: 025468 
+// Expected Output: 0-254-6-8
+const isEven = (num) => Number(num) % 2 === 0
+
+const insertDash = (str) => {
+  return str.split('').reduce((acc, num, index, str) => {
+    const actual = str[index]
+    const next = str[index + 1]
+    if (isEven(num) && isEven(next)) {
+      return acc += `${actual}-`
+    } else {
+      return acc += `${actual}`
+    }
+  }, '')
+}
+
+console.log('025468 => ', insertDash('025468'))
 ```
 
 7. Write a JavaScript program to sort the items of an array.
