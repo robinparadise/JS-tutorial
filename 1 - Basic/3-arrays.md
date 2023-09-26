@@ -236,7 +236,15 @@ Sample Output :
 "9"
 "4"
 */
-
+const a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27]];
+const iterador = (array) => {
+  array.forEach((miniArray, index) => {
+    console.log('Row', index)
+    miniArray.forEach(item => {
+      console.log(item)
+    })
+  })
+}
 ```
 
 10. Write a JavaScript program to find duplicate values in a JavaScript array.
