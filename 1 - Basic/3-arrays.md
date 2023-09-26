@@ -250,8 +250,27 @@ const iterador = (array) => {
 10. Write a JavaScript program to find duplicate values in a JavaScript array.
 
 ```javascript
-Sample array : var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9];
-Sample Output : [9]
+/* Sample array : var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9]; */
+/* Sample Output : [9] */
+
+const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9]
+
+const logic = (value, array) => {
+  return array.filter(item => value === item)
+}
+
+/* forEach, map, filter, reduce */
+const findDuplicated = (array) => {
+  let aux = [null]
+  array.forEach((item, index, arr) => {
+    if (logic(item, arr).length > 1) {
+      aux = [item]
+    }
+  })
+  return aux
+}
+console.log(findDuplicated(a))
+
 ```
 
 11. Write a JavaScript program to flatten a nested (any depth) array. If you pass shallow, the array will only be flattened to a single level.
