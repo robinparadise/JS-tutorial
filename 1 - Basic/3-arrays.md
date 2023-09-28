@@ -276,7 +276,7 @@ console.log(findDuplicated(a))
 11. Write a JavaScript program to flatten a nested (any depth) array. If you pass shallow, the array will only be flattened to a single level.
 
 ```javascript
-Sample Data :
+/* Sample Data : */
 console.log(flatten([1, [2], [3, [[4]]],[5,6]]));
 [1, 2, 3, 4, 5, 6]
 console.log(flatten([1, [2], [3, [[4]]],[5,6]], true));
@@ -362,4 +362,34 @@ Test Data :
 Expected Output:
 Number of arrays inside the said array: 2
 Number of arrays inside the said array: 3
+```
+
+20. More Exercises.
+
+```javascript
+const library = [ 
+  { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+  { author: 'Bill Gates', title: 'Walter Isaacson', libraryID: 4264},
+
+  { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+  { author: 'Steve Jobs', title: 'Steve Jobs', libraryID: 4264},
+
+  { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245},
+
+  { author: 'Paulo Coelho', title: 'The Alchemist', libraryID: 111},
+  { author: 'Paulo Coelho', title: 'Manuscript Found in Accra', libraryID: 777}
+];
+
+/*
+  booksByAuthor(library, 'Bill Gates') => [ 'The Road Ahead', 'Walter Isaacson' ]
+  libraryIDByAuthor(library, 'Bill Gates') => [ 1254, 4264 ]
+  sortByTitle(library) => [{ author: 'Paulo Coelho', title: 'Manuscript Found in Accra', libraryID: 777}...]
+  sortById(library) => [{ author: 'Paulo Coelho', title: 'The Alchemist', libraryID: 111}...]
+  groupByAuthor(library) => {
+    'Bill Gates': [ 'The Road Ahead', 'Walter Isaacson' ],
+    'Steve Jobs': [ 'Walter Isaacson', 'Steve Jobs' ],
+    'Suzanne Collins': [ 'Mockingjay: The Final Book of The Hunger Games' ],
+    'Paulo Coelho': [ 'The Alchemist', 'Manuscript Found in Accra' ]
+  }
+*/
 ```
