@@ -384,6 +384,7 @@ const library = [
   booksByAuthor(library, 'Bill Gates') => [ 'The Road Ahead', 'Walter Isaacson' ]
   libraryIDByAuthor(library, 'Bill Gates') => [ 1254, 4264 ]
   sortByTitle(library) => [{ author: 'Paulo Coelho', title: 'Manuscript Found in Accra', libraryID: 777}...]
+  
   sortById(library) => [{ author: 'Paulo Coelho', title: 'The Alchemist', libraryID: 111}...]
   groupByAuthor(library) => {
     'Bill Gates': [ 'The Road Ahead', 'Walter Isaacson' ],
@@ -391,5 +392,6 @@ const library = [
     'Suzanne Collins': [ 'Mockingjay: The Final Book of The Hunger Games' ],
     'Paulo Coelho': [ 'The Alchemist', 'Manuscript Found in Accra' ]
   }
+  changeBook(library, 4264, "Quijote") => libraryFixed
 */
 ```
